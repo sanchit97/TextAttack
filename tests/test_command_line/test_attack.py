@@ -146,6 +146,17 @@ attack_test_params = [
         ),
         "tests/sample_outputs/run_attack_stanza_pos_tagger.txt",
     ),
+    #
+    # test: run_attack on BERT MR using gradient-ranking greedy-word-wir.
+    #
+    (
+        "run_attack_stanza_pos_tagger",
+        (
+            "textattack attack --model bert-base-uncased-mr --num-examples 3 --num-examples-offset 15 --search greedy-word-wir^wir_method=\\'gradient\\' "
+            "--transformation word-swap-embedding --constraints repeat stopword --shuffle=False"
+        ),
+        "tests/sample_outputs/run_attack_gradient_greedy_word_wir.txt",
+    ),
 ]
 
 
